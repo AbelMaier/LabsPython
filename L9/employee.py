@@ -4,25 +4,37 @@ class Employee:
         self.salary = salary
 
     def get_details(self):
-        return f"Employee: {self.name}, Salary: {self.salary}"
+        return f"Angajat: {self.name}, Salariu: {self.salary}"
 
 
 class Manager(Employee):
     def __init__(self, name, salary, department):
         super().__init__(name, salary)
-
         self.department = department
 
     def get_details(self):
-        return f"Manager: {self.name}, Salary: {self.salary}, Department: {self.department}"
+        return f"Manager: {self.name}, Salariu: {self.salary}, Departament: {self.department}"
 
+try:
+    # creare angajat
+    print("Introducere Angajat")
+    emp_name = input("Nume Angajat: ")
+    emp_salary = float(input("Salariu: "))
 
-print("\n Adauga un Manager nou ")
-nume_mgr = input("Nume Manager: ")
-salariu_mgr = int(input("Salariu: "))
-dept_mgr = input("Departament: ")
+    emp = Employee(emp_name, emp_salary)
 
-manager_nou = Manager(nume_mgr, salariu_mgr, dept_mgr)
+    # creare manager
+    print("\nIntroducere Manager")
+    mgr_name = input("Nume Manager: ")
+    mgr_salary = float(input("Salariu: "))
+    mgr_department = input("Departament: ")
 
-print("\nDetalii salvate:")
-print(manager_nou.get_details())
+    mgr = Manager(mgr_name, mgr_salary, mgr_department)
+
+    # afisare
+    print("\nRezultate Salvate")
+    print(emp.get_details())
+    print(mgr.get_details())
+
+except ValueError:
+    print("Ai introdus litere în loc de numere la salariu!")
