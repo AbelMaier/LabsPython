@@ -1,5 +1,8 @@
 class Employee:
     def __init__(self, name, salary):
+        if salary < 0:
+            raise ValueError("Salariul nu poate fi negativ!")
+
         self.name = name
         self.salary = salary
 
@@ -15,16 +18,17 @@ class Manager(Employee):
     def get_details(self):
         return f"Manager: {self.name}, Salariu: {self.salary}, Departament: {self.department}"
 
+
 try:
     # creare angajat
-    print("Introducere Angajat")
+    print("--- Introducere Angajat ---")
     emp_name = input("Nume Angajat: ")
     emp_salary = float(input("Salariu: "))
 
     emp = Employee(emp_name, emp_salary)
 
     # creare manager
-    print("\nIntroducere Manager")
+    print("\n--- Introducere Manager ---")
     mgr_name = input("Nume Manager: ")
     mgr_salary = float(input("Salariu: "))
     mgr_department = input("Departament: ")
@@ -36,5 +40,5 @@ try:
     print(emp.get_details())
     print(mgr.get_details())
 
-except ValueError:
-    print("Ai introdus litere în loc de numere la salariu!")
+except ValueError as e:
+    print("Eroare:", e)
