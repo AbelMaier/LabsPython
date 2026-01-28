@@ -25,12 +25,12 @@ try:
     prod = input("Nume produs: ")
     cant = int(input("Cantitate: "))
 
-    # Adaugam produsul introdus de tine
+    # adaugare produs
     magazin.seteaza_stoc(prod, cant)
     print("Produs salvat/actualizat!")
 
     print("\n--- Pasul 2: Cautam un produs ---")
-    # Acum poti cauta fie ce ai adaugat tu, fie "mere", "apa" etc.
+    # cautare produs
     cautat = input("Ce produs cauti? (incearca 'mere' sau ce ai adaugat tu): ")
 
     stoc_gasit = magazin.cauta(cautat)
