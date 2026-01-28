@@ -20,7 +20,6 @@ magazin = Inventar()
 
 try:
     print(f"Produse existente deja in stoc: {list(magazin.produse.keys())}")
-    print("-" * 30)
 
     print("--- Pasul 1: Adaugam un produs NOU (sau actualizam) ---")
     prod = input("Nume produs: ")
